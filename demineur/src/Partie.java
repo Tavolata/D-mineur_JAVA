@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.Scanner;
 
 public class Partie {
     private Partie uniqueInstance;
@@ -44,10 +45,10 @@ public class Partie {
         return encours;
     }
     public void marquerCase(Point pt){
-
+        //tester avec plateau
     }
     public void decouvrirCase(Point pt){
-
+        //tester avec plateau
     }
     public void decrNbMines(){
         nbMinesRestantes=nbMinesRestantes-1;
@@ -56,17 +57,40 @@ public class Partie {
         nbMinesRestantes=nbMinesRestantes+1;
     }
     public void perdre(){
-        if(nbMinesRestantes!=0){
+        if(getNbMinesRestantes()!=0){
             resultat=false;
         }
     }
     public void testerSiGagne(){
-        if(nbMinesRestantes==0){
+        if(getNbMinesRestantes()==0){
             resultat=true;
-            if(niveau=="Débutant"){
-                niveau=""
+        }
+        else{
+            resultat=false;
+        }
+    }
+    public void afficher(){
+        int coord;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("debut de la partie");
+        encours=true;
+        while(isEncours()==true){
+            System.out.println(niveau);
+            System.out.println("\n");
+            System.out.println("nombre de mines a encore decouvrir:");
+            System.out.println(nbMinesRestantes);
+            System.out.println("\n");
+            //afficher le plateau
+            System.out.println("\n");
+            System.out.println("donne les coordonnees que tu veux decouvrir:");
+            coord=scan.nextInt();
+            //decouvrirCase(coord);
+            //marquerCase(coord);
+            //condition arret du jeu avec temps ecoule avec isencours==false et perdu
+            if(resultat==true){
+                encours=false;
+                System.out.println("gagne");
             }
         }
     }
-    public void afficher(){}
 }
