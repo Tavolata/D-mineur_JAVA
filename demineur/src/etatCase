@@ -1,0 +1,9 @@
+public Class etatCase{
+    public void marquer(){
+        
+    }
+    public void decouvrir(){
+        
+    }
+
+}
