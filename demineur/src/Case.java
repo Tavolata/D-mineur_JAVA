@@ -3,12 +3,14 @@ import java.awt.*;
 public class Case {
     
     private Point Coordonnees;
-
+    
 
     public void marquer(){
+    
 
     }
     public void decouvrir(){
+
 
     }
     public void devoiler()

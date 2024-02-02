@@ -1,4 +1,4 @@
-public class CaseNumerotee {
+public class CaseNumerotee extends Case{
     protected int NbVoisinesMinees;
     public void devoiler(){
     }
