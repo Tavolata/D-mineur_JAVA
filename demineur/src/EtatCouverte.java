@@ -3,6 +3,6 @@ public class EtatCouverte {
         c.devoiler();
     }
     public void marquer(Case c){
-        c.getEtatCourant();
+        c.setEtatCourant(c.getEtatCourant());
     }
 }

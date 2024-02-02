@@ -1,6 +1,8 @@
 public class EtatDecouverte {
-    public decouvrir(Case c){
-        c.coordonnees;
+    public void decouvrir(Case c){
+        c.getEtatCourant();
     }
-    public marquer(Case c){}
+    public void marquer(Case c){
+        c.setEtatCourant(c.getEtatCourant());
+    }
 }
