@@ -1,4 +1,4 @@
-public class EtatDecouverte {
+public class EtatDecouverte extends EtatCase {
     public void decouvrir(Case c){
         c.getEtatCourant();
     }

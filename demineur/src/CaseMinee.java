@@ -1,4 +1,4 @@
-public class CaseMinee {
+public class CaseMinee extends Case {
     public void devoiler(){
     }
     public void afficher(){

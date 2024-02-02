@@ -1,4 +1,4 @@
-public class CaseVide {
+public class CaseVide extends Case {
     public void devoiler(){
     }
     public void afficher(){
