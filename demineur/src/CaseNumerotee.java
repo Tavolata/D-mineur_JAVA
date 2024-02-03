@@ -1,11 +1,14 @@
 public class CaseNumerotee extends Case {
-    protected int NbVoisinesMinees;
+    private int NbVoisinesMinees;
+    public Case(Point Coordonnees){
+        super(Coordonnees);
+    }
     public void devoiler(){
     }
     public void afficher(){
         System.out.println("la case numéroté est:");
     }
     public void NbVoisinesMinees(){
-        NbVoisinesMinees=NbVoisinesMinees+1;
+        this.NbVoisinesMinees=NbVoisinesMinees+1;
     }
 }

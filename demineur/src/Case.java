@@ -1,10 +1,11 @@
 import java.awt.*;
 
 public class Case {
-    
+    private ArrayList<EtatCase> desEtatCase;
     private Point Coordonnees;
-
-
+    public Case(Point Coordonnees){
+        this.Coordonnees=Coordonnees;
+    }
     public void marquer(){
 
     }
