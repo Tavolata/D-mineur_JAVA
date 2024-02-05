@@ -1,12 +1,12 @@
 import java.awt.*;
 
 public class Case {
-    private EtatCase[] desEtatCase = new EtatCase[9*9] ;
+    private EtatCase desEtatCase;
     private Point Coordonnees;
     public Case(Point Coordonnees){
         this.Coordonnees.setX(0);
         this.Coordonnees.setY(0);
-        this.desEtatCase.add(new EtatCouverte());
+        this.desEtatCase.setEtatCourant(0);
 
     }
     public void marquer(){
@@ -21,14 +21,17 @@ public class Case {
     {
 
     }
-    public void setEtatCourant(etatCase e){
+    public void setEtatCourant(int e){
+        desEtatCase.etat=e;
 
     }
     public void Afficher(){
 
     }
 
-    public etatCase getEtatCourant(){
+    public int getEtatCourant(){
+
+        return desEtatCase.etat;
 
     }
 

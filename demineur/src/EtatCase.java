@@ -1,5 +1,5 @@
 public class EtatCase{
-    private int etat=0; // couverte par défaut car toutes les cases sont couverte au début
+    public int etat=0; // couverte par défaut car toutes les cases sont couverte au début
     // 0 = case couverte | 1 case marquee | 2 case decouverte
     public void marquer(){
         if(etat==0){
