@@ -1,10 +1,13 @@
 import java.awt.*;
 
 public class Case {
-    private ArrayList<EtatCase> desEtatCase;
+    private EtatCase[] desEtatCase = new EtatCase[9*9] ;
     private Point Coordonnees;
     public Case(Point Coordonnees){
-        this.Coordonnees=Coordonnees;
+        this.Coordonnees.setX(0);
+        this.Coordonnees.setY(0);
+        this.desEtatCase.add(new EtatCouverte());
+
     }
     public void marquer(){
     
