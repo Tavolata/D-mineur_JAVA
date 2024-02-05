@@ -1,10 +1,8 @@
-public class EtatCouverte {
-    private int etat=0;
+public class EtatCouverte extends EtatCase {
     public void decouvrir(Case c){
-        c.decouvrir();
+        c.devoiler();
     }
     public void marquer(Case c){
-        c.marquer();
+        c.setEtatCourant(c.getEtatCourant());
     }
-    
 }

@@ -1,9 +1,8 @@
-public class EtatDecouverte {
-    private int etat=2;
+public class EtatDecouverte extends EtatCase {
     public void decouvrir(Case c){
-        c.decouvrir();
+        c.getEtatCourant();
     }
     public void marquer(Case c){
-        c.marquer();
+        c.setEtatCourant(c.getEtatCourant());
     }
 }

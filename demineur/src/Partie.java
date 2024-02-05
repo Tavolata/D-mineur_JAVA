@@ -2,12 +2,13 @@ import java.awt.*;
 import java.util.Scanner;
 
 public class Partie {
-    private Partie uniqueInstance;
-    private int nbMinesInitial=10;
+    private Plateau unPlateau;
+    protected Partie uniqueInstance;
+    protected int nbMinesInitial=10;
     protected int nbMinesRestantes;
-    private String niveau="Débutant";
-    private boolean encours;
-    private boolean resultat;
+    protected String niveau="Débutant";
+    protected boolean encours;
+    protected boolean resultat;
 
     public Partie(String niveau) {
         this.niveau=niveau;
