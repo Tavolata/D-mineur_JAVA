@@ -1,9 +1,11 @@
 public class CaseNumerotee extends Case {
     private int NbVoisinesMinees;
-    public Case(Point Coordonnees){
+    public CaseNumerotee(Point Coordonnees) {
         super(Coordonnees);
     }
+
     public void devoiler(){
+
     }
     public void afficher(){
         System.out.println("la case numéroté est:");

@@ -1,5 +1,5 @@
 public class CaseMinee extends Case {
-    public Case(Point Coordonnees){
+    public CaseMinee(Point Coordonnees) {
         super(Coordonnees);
     }
     public void devoiler(){

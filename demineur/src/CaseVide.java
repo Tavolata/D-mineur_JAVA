@@ -1,7 +1,8 @@
 public class CaseVide extends Case {
-    public Case(Point Coordonnees){
+    public CaseVide(Point Coordonnees) {
         super(Coordonnees);
     }
+
     public void devoiler(){
         Partie.testerSiGagner();
         for(int i=0;i<=9;i++){
