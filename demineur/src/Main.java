@@ -1,17 +1,22 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+//test classes du démineur
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Entrée with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Création d'une instance de la classe Case
+        Case case1 = new Case();
+        case1.Afficher();
 
-        // Press Maj+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Maj+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        // Appel des méthodes de la classe Case
+        case1.marquer();
+        case1.marquer();
+        case1.decouvrir();
+    
+        // Affichage de la valeur de la case
+        case1.Afficher();
+        case1.setEtatCourant(1);
+        case1.Afficher();
+        case1.setEtatCourant(2);
+        case1.Afficher();
+        
     }
 }
+    
