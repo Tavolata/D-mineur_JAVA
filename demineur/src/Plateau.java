@@ -1,13 +1,16 @@
 import java.awt.*;
+import java.util.HashMap;
+
 
 public class Plateau extends Partie{
-    private HashMap<Coordonnées,Case> desCase;
+    private HashMap<Point,Case> Coordonnees;
     private int largeur=9;
     private int hauteur=9;
     public Plateau(String niveau) {
         super(niveau);
     }
 
+    @Override
     public boolean testerSiGagne(){
         boolean s= super.resultat;
         return(s);

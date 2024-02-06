@@ -1,9 +1,5 @@
 public class CaseNumerotee extends Case {
     private int NbVoisinesMinees;
-    public CaseNumerotee(Point Coordonnees) {
-        super(Coordonnees);
-    }
-
     public void devoiler(){
 
     }
