@@ -2,13 +2,13 @@ import java.awt.*;
 import java.util.Scanner;
 
 public class Partie {
-    private Plateau unPlateau;
+    private static Plateau unPlateau;
     protected Partie uniqueInstance;
     protected int nbMinesInitial=10;
-    protected int nbMinesRestantes;
+    protected static int nbMinesRestantes;
     protected String niveau="Débutant";
     protected boolean encours;
-    protected boolean resultat;
+    protected static boolean resultat;
 
     public Partie(String niveau) {
         this.niveau=niveau;
@@ -46,11 +46,9 @@ public class Partie {
         return encours;
     }
     public void marquerCase(Point pt){
-        //tester avec plateau
         unPlateau.marquerCase(pt);
     }
     public void decouvrirCase(Point pt){
-        //tester avec plateau
         unPlateau.decouvrirCase(pt);
     }
     public void decrNbMines(){
@@ -59,12 +57,12 @@ public class Partie {
     public void incrNbMines(){
         nbMinesRestantes=nbMinesRestantes+1;
     }
-    public void perdre(){
-        if(getNbMinesRestantes()!=0){
+    public static void perdre(){
+        if(nbMinesRestantes!=0){
             resultat=false;
         }
     }
-    public void testerSiGagne(){
+    public static void testerSiGagne(){
         unPlateau.testerSiGagne();
     }
     public void afficher(){
