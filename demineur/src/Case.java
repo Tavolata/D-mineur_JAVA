@@ -1,39 +1,53 @@
 import java.awt.*;
 
 public class Case {
-    private EtatCase desEtatCase = new EtatCase();
+    private EtatCase desEtatCase;
     private Point Coordonnees = new Point();
+
+
     public Case(){
         this.Coordonnees.setX(0);
         this.Coordonnees.setY(0);
-        this.desEtatCase.setEtatCourant(0);
+        this.desEtatCase= new EtatCouverte();
 
     }
     public void marquer(){
+        
         this.desEtatCase.marquer();
-        System.out.println(this.desEtatCase.etat);
+        System.out.println(this.getEtatCourant());
     }
     public void decouvrir(){
         this.desEtatCase.decouvrir();
-        System.out.println(this.desEtatCase.etat);
+        System.out.println(this.getEtatCourant());
 
     }
 
-    public void setEtatCourant(int e){
-        desEtatCase.etat=e;
+    public void setEtatCourant(EtatCase e){
+        switch(e.getClass().getSimpleName()){
+            case "EtatCouverte":
+                this.desEtatCase = new EtatCouverte();
+                break;
+            case "EtatDecouverte":
+                this.desEtatCase = new EtatDecouverte();
+                break;
+            case "EtatMarquee":
+                this.desEtatCase = new EtatMarquee();
+                break;
+
+        }
+        
 
     }
     public void Afficher(){
         System.out.println("Coordonnees : "+this.Coordonnees.getX()+" "+this.Coordonnees.getY());
-        System.out.println("Etat : "+this.desEtatCase.etat);
+        System.out.println("Etat : "+this.getEtatCourant());
 
     }
 
-    // public int getEtatCourant(){
+    public String getEtatCourant(){
+        return desEtatCase.getClass().getSimpleName();
 
-    //     return desEtatCase.etat;
-
-    // }
+    }
 
     // public ArrayList<Case> getVoisines(){
 
