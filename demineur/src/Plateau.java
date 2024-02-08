@@ -1,36 +1,63 @@
 import java.awt.*;
 import java.util.HashMap;
+import java.util.Scanner;
 
 
-public class Plateau extends Partie{
+public class Plateau{
     private HashMap<Point,Case> Coordonnees;
     private int largeur=9;
     private int hauteur=9;
-    public Plateau(String niveau) {
-        super(niveau);
-    }
 
-    @Override
+    private boolean resultat;
+    private int nbMinesRestantes;
+
     public boolean testerSiGagne(){
-        boolean s= super.resultat;
-        return(s);
+        if(nbMinesRestantes==0){
+            resultat=true;
+        }
+        else{
+            resultat=false;
+        }
+        return(resultat);
     }
-    @Override
     public void marquerCase(Point pt){
-        super.marquerCase(pt);
+        pt.setX(1);
+        pt.setY(1);
     }
-    @Override
     public void decouvrirCase(Point pt){
-        super.decouvrirCase(pt);
+        pt.getX();
+        pt.getY();
     }
-    @Override
     public void afficher(){
-        super.afficher();
 
-        for(int i=0;i<largeur;i++){
-            for(int j=0;j<hauteur;j++){
-
+        for(int i=0;i<=largeur;i++){
+            for(int j=0;j<=hauteur;j++){
+                //Point pt;
+                //pt.getX();
+                //pt.getY();
             }
         }
+        /*int coord;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("debut de la partie");
+        encours=true;
+        while(isEncours()==true){
+            System.out.println(niveau);
+            System.out.println("\n");
+            System.out.println("nombre de mines a encore decouvrir:");
+            System.out.println(nbMinesRestantes);
+            System.out.println("\n");
+            //afficher le plateau
+            System.out.println("\n");
+            System.out.println("donne les coordonnees que tu veux decouvrir:");
+            coord=scan.nextInt();
+            //decouvrirCase(coord);
+            //marquerCase(coord);
+            //condition arret du jeu avec temps ecoule avec isencours==false et perdu
+            if(resultat==true){
+                encours=false;
+                System.out.println("gagne");
+            }
+        }*/
     }
 }
