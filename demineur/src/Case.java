@@ -1,5 +1,9 @@
 import java.awt.*;
 
+import Exceptions.ExceptionCaseCouverte;
+import Exceptions.ExceptionCaseMarquee;
+
+@SuppressWarnings("unused")
 public class Case {
     private EtatCase desEtatCase;
     private Point Coordonnees = new Point();
@@ -12,13 +16,22 @@ public class Case {
 
     }
     public void marquer(){
-        
-        this.desEtatCase.marquer();
-        System.out.println(this.getEtatCourant());
-    }
+        try {
+            desEtatCase.marquer(this);
+        } catch (ExceptionCaseCouverte e) { 
+            e.printStackTrace();
+        } catch (ExceptionCaseMarquee e) {
+            e.printStackTrace();
+        }
+        }
     public void decouvrir(){
-        this.desEtatCase.decouvrir();
-        System.out.println(this.getEtatCourant());
+        try {
+            desEtatCase.decouvrir(this);
+        } catch (ExceptionCaseCouverte e) {
+            
+            e.printStackTrace();
+        }
+        
 
     }
 

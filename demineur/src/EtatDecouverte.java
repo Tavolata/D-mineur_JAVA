@@ -10,8 +10,8 @@ public class EtatDecouverte extends EtatCase {
         throw new ExceptionCaseCouverte("Case déjà découverte");
     }
     
-    public void marquer(Case c){
-        
+    public void marquer(Case c) throws ExceptionCaseCouverte{
+        throw new ExceptionCaseCouverte("Case déjà découverte");
     }
     
 }
