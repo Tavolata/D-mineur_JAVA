@@ -1,12 +1,15 @@
 import java.awt.*;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
-
+import java.io.*;
+import java.util.ArrayList;
 
 public class Plateau{
     private HashMap<Point,Case> Coordonnees;
     private int largeur=9;
     private int hauteur=9;
+    Map<Point,Case> m_coord = new HashMap<>();
 
     private static boolean resultat;
     private static int nbMinesRestantes;
@@ -30,11 +33,27 @@ public class Plateau{
     }
     public void afficher(){
 
-        for(int i=0;i<=largeur;i++){
-            for(int j=0;j<=hauteur;j++){
-                decouvrirCase(Coordonnees[i][j]);
+        int c;
+        c=3;
+        while(c!=0){
+            System.out.println("Nb mines restantes:");
+            System.out.println(nbMinesRestantes);
+            for(int i=0;i<=largeur;i++){
+                for(int j=0;j<=hauteur;j++) {
+                    m_coord.get(pt);
+                }
+                System.out.println("\n");
             }
-            System.out.println("\n");
+            System.out.println("1- Marquer une case");
+            System.out.println("2- Decouvrir une case");
+            System.out.println("0- Quitter");
+            if(c==1) {
+                System.out.println("Saisissez les coordonnees de la case");
+            }
+            if(c==2) {
+                System.out.println("Saisissez les coordonnees de la case");
+                CaseNumerotee.afficher();
+            }
         }
     }
 }

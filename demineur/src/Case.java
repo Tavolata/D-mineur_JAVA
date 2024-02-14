@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.ArrayList;
 
 import Exceptions.ExceptionCaseCouverte;
 import Exceptions.ExceptionCaseMarquee;
@@ -7,6 +8,7 @@ import Exceptions.ExceptionCaseMarquee;
 public class Case {
     private EtatCase desEtatCase;
     private Point Coordonnees = new Point();
+    private List<Case> m_voisines=new ArrayList<Case>();
 
 
     public Case(){
