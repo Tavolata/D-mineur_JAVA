@@ -33,14 +33,20 @@ public class Plateau{
     }
     public void afficher(){
 
+        Scanner lectureClavier= new Scanner(System.in);
         int c;
         c=3;
+        float x;
+        float y;
         while(c!=0){
             System.out.println("Nb mines restantes:");
             System.out.println(nbMinesRestantes);
             for(int i=0;i<=largeur;i++){
                 for(int j=0;j<=hauteur;j++) {
-                    m_coord.get(pt);
+                    x=lectureClavier.nextFloat();
+                    y= lectureClavier.nextFloat();
+                    Point p=new Point(i,j);
+                    m_coord.get(p);
                 }
                 System.out.println("\n");
             }
@@ -49,10 +55,18 @@ public class Plateau{
             System.out.println("0- Quitter");
             if(c==1) {
                 System.out.println("Saisissez les coordonnees de la case");
+                x=lectureClavier.nextFloat();
+                y= lectureClavier.nextFloat();
+                m_coord.setX(x);
+                m_coord.setY(y);
             }
             if(c==2) {
                 System.out.println("Saisissez les coordonnees de la case");
                 CaseNumerotee.afficher();
+                x=lectureClavier.nextFloat();
+                y= lectureClavier.nextFloat();
+                m_coord.setX(x);
+                m_coord.setY(y);
             }
         }
     }
