@@ -4,7 +4,7 @@ public class CaseNumerotee extends Case {
         Partie.testerSiGagne();
     }
     public void afficher(){
-        System.out.println("la case numéroté est:");
+        System.out.println(NbVoisinesMinees);
     }
     public void NbVoisinesMinees(){
         this.NbVoisinesMinees=NbVoisinesMinees+1;

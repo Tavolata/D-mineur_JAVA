@@ -36,8 +36,8 @@ public class Plateau{
         Scanner lectureClavier= new Scanner(System.in);
         int c;
         c=3;
-        float x;
-        float y;
+        int x;
+        int y;
         while(c!=0){
             System.out.println("Nb mines restantes:");
             System.out.println(nbMinesRestantes);
@@ -57,16 +57,14 @@ public class Plateau{
                 System.out.println("Saisissez les coordonnees de la case");
                 x=lectureClavier.nextFloat();
                 y= lectureClavier.nextFloat();
-                m_coord.setX(x);
-                m_coord.setY(y);
+                m_coord.set(x,y);
             }
             if(c==2) {
                 System.out.println("Saisissez les coordonnees de la case");
                 CaseNumerotee.afficher();
                 x=lectureClavier.nextFloat();
                 y= lectureClavier.nextFloat();
-                m_coord.setX(x);
-                m_coord.setY(y);
+                m_coord.set(x,y);
             }
         }
     }

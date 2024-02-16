@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.util.ArrayList;
+
 public class CaseVide extends Case {
     public void devoiler(){
         Partie.testerSiGagne();
