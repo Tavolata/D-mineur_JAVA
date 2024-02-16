@@ -3,10 +3,13 @@ import java.util.ArrayList;
 
 public class CaseVide extends Case {
     public void devoiler(){
-        Partie.testerSiGagne();
-        for(int i=0;i<=9;i++){
-            for(int j=0;j<=9;j++){
-                voisines.decouvrir()[i][j];
+        if(Plateau.testerSiGagne()==true){
+            Partie.encours=false;
+            Partie.resultat=true;
+        }
+        else{
+            for(int i=0;i<=8;i++){
+                m_voisines.get(i).decouvrir();
             }
         }
     }

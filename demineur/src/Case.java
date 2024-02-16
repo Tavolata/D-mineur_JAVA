@@ -7,9 +7,9 @@ import Exceptions.ExceptionCaseMarquee;
 @SuppressWarnings("unused")
 public class Case {
     private EtatCase desEtatCase;
-    private Point Coordonnees = new Point();
-    List<Case> m_voisines;
-    m_voisines =new ArrayList<Case>();
+    protected Point Coordonnees = new Point();
+    ArrayList<Case> m_voisines;
+
 
 
     public Case(){

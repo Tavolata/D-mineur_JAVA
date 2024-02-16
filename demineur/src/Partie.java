@@ -1,29 +1,30 @@
 import java.awt.*;
+import java.awt.Point;
 import java.util.Scanner;
 
 public class Partie {
     private static Plateau unPlateau;
-    protected Partie uniqueInstance;
+    protected static Partie uniqueInstance;
     protected int nbMinesInitial=10;
     protected static int nbMinesRestantes;
     protected String niveau="Débutant";
-    protected boolean encours;
+    protected static boolean encours;
     protected static boolean resultat;
 
-    public Partie(String niveau) {
+    private Partie(String niveau) {
         this.niveau=niveau;
     }
-    public Partie(Partie tete){
+    private Partie(Partie tete){
         niveau= tete.niveau;
     }
 
-    public Partie setInstance(String niveau){
+    public static Partie setInstance(String niveau){
         if(uniqueInstance==null){
             uniqueInstance=new Partie(niveau);
         }
         return uniqueInstance;
     }
-    public Partie getInstance(){
+    public static Partie getInstance(){
         return uniqueInstance;
     }
 
@@ -60,10 +61,11 @@ public class Partie {
     public static void perdre(){
         if(nbMinesRestantes!=0){
             resultat=false;
+            encours=false;
         }
     }
     public static void testerSiGagne(){
-        unPlateau.testerSiGagne();
+        resultat=unPlateau.testerSiGagne();
     }
     public void afficher(){
         unPlateau.afficher();

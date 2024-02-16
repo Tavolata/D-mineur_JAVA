@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.Point;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,29 +11,25 @@ public class Plateau{
     private int largeur=9;
     private int hauteur=9;
     Map<Point,Case> m_coord = new HashMap<>();
-
-    private static boolean resultat;
     private static int nbMinesRestantes;
 
     public static boolean testerSiGagne(){
         if(nbMinesRestantes==0){
-            resultat=true;
+            return(true);
         }
         else{
-            resultat=false;
+            return(false);
         }
-        return(resultat);
     }
     public void marquerCase(Point pt){
-        pt.setX(1);
-        pt.setY(1);
+        pt.getX();
+        pt.getX();
     }
     public void decouvrirCase(Point pt){
         pt.getX();
         pt.getY();
     }
     public void afficher(){
-
         Scanner lectureClavier= new Scanner(System.in);
         int c;
         c=3;
@@ -43,10 +40,11 @@ public class Plateau{
             System.out.println(nbMinesRestantes);
             for(int i=0;i<=largeur;i++){
                 for(int j=0;j<=hauteur;j++) {
-                    x=lectureClavier.nextFloat();
-                    y= lectureClavier.nextFloat();
-                    Point p=new Point(i,j);
-                    m_coord.get(p);
+                    x=lectureClavier.nextInt();
+                    y= lectureClavier.nextInt();
+                    Point p=new Point(x,y);
+                    p.getX();
+                    p.getY();
                 }
                 System.out.println("\n");
             }
@@ -55,16 +53,14 @@ public class Plateau{
             System.out.println("0- Quitter");
             if(c==1) {
                 System.out.println("Saisissez les coordonnees de la case");
-                x=lectureClavier.nextFloat();
-                y= lectureClavier.nextFloat();
-                m_coord.set(x,y);
+                x=lectureClavier.nextInt();
+                y= lectureClavier.nextInt();
             }
             if(c==2) {
                 System.out.println("Saisissez les coordonnees de la case");
-                CaseNumerotee.afficher();
-                x=lectureClavier.nextFloat();
-                y= lectureClavier.nextFloat();
-                m_coord.set(x,y);
+                //CaseNumerotee.afficher();
+                x=lectureClavier.nextInt();
+                y= lectureClavier.nextInt();
             }
         }
     }
