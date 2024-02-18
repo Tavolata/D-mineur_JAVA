@@ -1,7 +1,11 @@
 public class CaseNumerotee extends Case {
     private int NbVoisinesMinees=0;
     public void devoiler(){
-        Partie.testerSiGagne();
+        if(Partie.testerSiGagne()==false){
+            if(Case.Coordonnees(i)(j)==0){
+                NbVoisinesMinees=NbVoisinesMinees+1;
+            }
+        }
     }
     public void afficher(){
         System.out.println(NbVoisinesMinees);
