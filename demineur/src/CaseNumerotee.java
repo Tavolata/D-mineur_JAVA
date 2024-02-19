@@ -2,8 +2,8 @@ public class CaseNumerotee extends Case {
     private int NbVoisinesMinees=0;
     public void devoiler(){
         if(Partie.testerSiGagne()==false){
-            if(Case.Coordonnees(i)(j)==0){
-                NbVoisinesMinees=NbVoisinesMinees+1;
+            for(int i=0; i<=9;i++){
+                NbVoisinesMinees=Coordonnees.getVoisines(i)+NbVoisinesMinees;
             }
         }
     }

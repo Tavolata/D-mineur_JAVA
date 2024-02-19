@@ -65,14 +65,13 @@ public class Case {
 
     }
 
-    // public ArrayList<Case> getVoisines(){
+    public ArrayList<Case> getVoisines(){
+        return m_voisines;
+    }
 
-    // }
-
-    // public void ajouterVoisine(Case c){
-
-     //}
-
+    public void ajouterVoisine(Case c){
+        m_voisines.add(c);
+    }
 
 
 }

@@ -55,12 +55,16 @@ public class Plateau{
                 System.out.println("Saisissez les coordonnees de la case");
                 x=lectureClavier.nextInt();
                 y= lectureClavier.nextInt();
+                Point p= new Point(x,y);
+                marquerCase(p);
             }
             if(c==2) {
                 System.out.println("Saisissez les coordonnees de la case");
                 //CaseNumerotee.afficher();
                 x=lectureClavier.nextInt();
                 y= lectureClavier.nextInt();
+                Point p=new Point(x,y);
+                decouvrirCase(p);
             }
         }
     }
