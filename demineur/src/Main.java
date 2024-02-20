@@ -12,6 +12,8 @@ public class Main {
         case1.Afficher();
         case1.decouvrir();
         case1.Afficher();*/
+        Partie partie = Partie.getInstance("Débutant");
+        partie.afficher();
     }
 }
     

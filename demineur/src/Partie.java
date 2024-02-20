@@ -22,7 +22,7 @@ public class Partie {
         }
         return uniqueInstance;
     }
-    public static Partie getInstance(){
+    public static Partie getInstance(String débutant){
         return uniqueInstance;
     }
 
@@ -50,10 +50,10 @@ public class Partie {
     public void decouvrirCase(Point pt){
         unPlateau.decouvrirCase(pt);
     }
-    public void decrNbMines(){
+    public static void decrNbMines(){
         nbMinesRestantes=nbMinesRestantes-1;
     }
-    public void incrNbMines(){
+    public static void incrNbMines(){
         nbMinesRestantes=nbMinesRestantes+1;
     }
     public static void perdre(){

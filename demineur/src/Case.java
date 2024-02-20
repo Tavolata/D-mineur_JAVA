@@ -38,7 +38,9 @@ public class Case {
 
     }
 
-    public void setEtatCourant(EtatCase e){
+    public static void devoiler(){}
+
+    public static void setEtatCourant(EtatCase e){
         switch(e.getClass().getSimpleName()){
             case "EtatCouverte":
                 this.desEtatCase = new EtatCouverte();
@@ -54,13 +56,13 @@ public class Case {
         
 
     }
-    public void Afficher(){
+    public void afficher(){
         System.out.println("Coordonnees : "+this.Coordonnees.getX()+" "+this.Coordonnees.getY());
         System.out.println("Etat : "+this.getEtatCourant());
 
     }
 
-    public String getEtatCourant(){
+    public static String getEtatCourant(){
         return desEtatCase.getClass().getSimpleName();
 
     }

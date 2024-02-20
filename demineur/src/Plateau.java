@@ -11,10 +11,9 @@ public class Plateau{
     private int largeur=9;
     private int hauteur=9;
     Map<Point,Case> m_coord = new HashMap<>();
-    private static int nbMinesRestantes;
 
     public static boolean testerSiGagne(){
-        if(nbMinesRestantes==0){
+        if(Partie.nbMinesRestantes==0){
             return(true);
         }
         else{
@@ -22,12 +21,21 @@ public class Plateau{
         }
     }
     public void marquerCase(Point pt){
-        pt.getX();
-        pt.getX();
+        if(Case.getEtatCourant()=EtatCouverte.marquer(this)){
+            Partie.decrNbMines();
+            Case.setEtatCourant(marquer);
+        }
+        if(Case.getEtatCourant()=EtatMarquee.marquer(this)){
+            Partie.incrNbMines();
+            Case.setEtatCourant(couverte);
+        }
     }
     public void decouvrirCase(Point pt){
-        pt.getX();
-        pt.getY();
+        if(Case.getEtatCourant()=EtatCouverte.decouvrir(this)){
+            Partie.decrNbMines();
+            Case.setEtatCourant(decouverte);
+            Case.devoiler();
+        }
     }
     public void afficher(){
         Scanner lectureClavier= new Scanner(System.in);
@@ -37,7 +45,7 @@ public class Plateau{
         int y;
         while(c!=0){
             System.out.println("Nb mines restantes:");
-            System.out.println(nbMinesRestantes);
+            System.out.println(Partie.nbMinesRestantes);
             for(int i=0;i<=largeur;i++){
                 for(int j=0;j<=hauteur;j++) {
                     x=lectureClavier.nextInt();

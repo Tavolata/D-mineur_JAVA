@@ -6,7 +6,7 @@ public class EtatMarquee extends EtatCase {
         c.setEtatCourant(new EtatDecouverte());
         
     }
-    public void marquer(Case c) throws ExceptionCaseCouverte, ExceptionCaseMarquee{
+    public static void marquer(Case c) throws ExceptionCaseCouverte, ExceptionCaseMarquee{
         throw new ExceptionCaseMarquee("Case déjà marquée");
     }
 }
