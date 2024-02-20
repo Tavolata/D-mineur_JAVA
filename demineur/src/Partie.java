@@ -1,6 +1,4 @@
-import java.awt.*;
 import java.awt.Point;
-import java.util.Scanner;
 
 public class Partie {
     private static Plateau unPlateau;
@@ -11,7 +9,7 @@ public class Partie {
     protected static boolean encours;
     protected static boolean resultat;
 
-    private Partie(String niveau) {
+    private Partie() {
         this.niveau=niveau;
     }
     private Partie(Partie tete){
@@ -20,7 +18,7 @@ public class Partie {
 
     public static Partie setInstance(String niveau){
         if(uniqueInstance==null){
-            uniqueInstance=new Partie(niveau);
+            uniqueInstance=new Partie();
         }
         return uniqueInstance;
     }
