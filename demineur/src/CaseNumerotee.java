@@ -1,9 +1,12 @@
 public class CaseNumerotee extends Case {
     private int NbVoisinesMinees=0;
     public void devoiler(){
-        if(Partie.testerSiGagne()==false){
-            for(int i=0; i<=9;i++){
-                NbVoisinesMinees=Coordonnees.getVoisines(i)+NbVoisinesMinees;
+        if(Partie.resultat=true){
+            Partie.testerSiGagne();
+        }
+        else{
+            for(int i=0; i<=NbVoisinesMinees;i++){
+                m_voisines.decouvrir();
             }
         }
     }
