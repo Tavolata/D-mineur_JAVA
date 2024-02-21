@@ -11,15 +11,14 @@ public class Partie {
     protected static boolean resultat;
 
     private Partie() {
-        this.niveau=niveau;
     }
-    private Partie(Partie tete){
-        niveau= tete.niveau;
+    private Partie(String niveau){
+        this.niveau= niveau;
     }
 
     public static Partie setInstance(String niveau){
         if(uniqueInstance==null){
-            uniqueInstance=new Partie();
+            uniqueInstance=new Partie(niveau);
         }
         return uniqueInstance;
     }

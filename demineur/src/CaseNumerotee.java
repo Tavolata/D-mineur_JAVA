@@ -6,7 +6,7 @@ public class CaseNumerotee extends Case {
         }
         else{
             for(int i=0; i<=NbVoisinesMinees;i++){
-                m_voisines.decouvrir();
+                m_voisines.get(i).decouvrir();
             }
         }
     }

@@ -5,7 +5,7 @@ import Exceptions.ExceptionCaseCouverte;
 import Exceptions.ExceptionCaseMarquee;
 
 @SuppressWarnings("unused")
-public class Case {
+public abstract class Case {
     private EtatCase desEtatCase;
     protected Point Coordonnees = new Point();
     protected ArrayList<Case> m_voisines;
@@ -13,11 +13,17 @@ public class Case {
 
 
     public Case(){
-        this.Coordonnees.setX(0);
-        this.Coordonnees.setY(0);
+        this.Coordonnees.x=0;
+        this.Coordonnees.y=0;
         this.desEtatCase= new EtatCouverte();
 
     }
+
+    public Case(Point pt)
+    {
+        Coordonnees = pt;
+    }
+
     public void marquer(){
         try {
             desEtatCase.marquer(this);
