@@ -72,7 +72,7 @@ public class Partie {
         int x;
         int y;
         System.out.println("Nb mines restantes:");
-        System.out.println(Partie.nbMinesRestantes);
+        System.out.println(nbMinesRestantes);
         unPlateau.afficher();
         System.out.println("1- Marquer une case");
         System.out.println("2- Decouvrir une case");
@@ -85,7 +85,7 @@ public class Partie {
         switch(c){
             case 1: marquerCase(p);
                 System.out.println("Nb mines restantes:");
-                System.out.println(Partie.nbMinesRestantes);
+                System.out.println(nbMinesRestantes);
                 unPlateau.afficher();
                 System.out.println("1- Marquer une case");
                 System.out.println("2- Decouvrir une case");
@@ -99,7 +99,7 @@ public class Partie {
             case 2:
                 decouvrirCase(p);
                 System.out.println("Nb mines restantes:");
-                System.out.println(Partie.nbMinesRestantes);
+                System.out.println(nbMinesRestantes);
                 unPlateau.afficher();
                 System.out.println("1- Marquer une case");
                 System.out.println("2- Decouvrir une case");
