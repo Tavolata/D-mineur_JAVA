@@ -7,10 +7,40 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Plateau{
-    private HashMap<Point,Case> Coordonnees;
     private int largeur=9;
     private int hauteur=9;
-    Map<Point,Case> m_coord = new HashMap<>();
+    private int taille=largeur*hauteur;
+
+    Map<Point,Case> Plat = new HashMap<>();
+    public Plateau(int largeur, int hauteur){
+        this.largeur=largeur;
+        this.hauteur=hauteur;
+        for (int i = 0; i < largeur; i++) {
+            for (int j = 0; j < hauteur; j++) {
+                Plat.put(new Point(i, j), new Case());
+            }
+        }
+    }
+    public int getTaille(){
+        return taille;
+    }
+
+    public int getLargeur() {
+        return largeur;
+    }
+
+    public void setLargeur(int largeur) {
+        this.largeur = largeur;
+    }
+
+    public int getHauteur() {
+        return hauteur;
+    }
+
+    public void setHauteur(int hauteur) {
+        this.hauteur = hauteur;
+    }
+    
 
     public static boolean testerSiGagne(){
         if(Partie.nbMinesRestantes==0){
@@ -20,60 +50,30 @@ public class Plateau{
             return(false);
         }
     }
-    public void marquerCase(Point pt){
-        if(Case.getEtatCourant()=EtatCouverte.marquer(this)){
-            Partie.decrNbMines();
-            Case.setEtatCourant(marquer);
-        }
-        if(Case.getEtatCourant()=EtatMarquee.marquer(this)){
-            Partie.incrNbMines();
-            Case.setEtatCourant(couverte);
-        }
-    }
-    public void decouvrirCase(Point pt){
-        if(Case.getEtatCourant()=EtatCouverte.decouvrir(this)){
-            Partie.decrNbMines();
-            Case.setEtatCourant(decouverte);
-            Case.devoiler();
-        }
-    }
-    public void afficher(){
-        Scanner lectureClavier= new Scanner(System.in);
-        int c;
-        c=3;
-        int x;
-        int y;
-        while(c!=0){
-            System.out.println("Nb mines restantes:");
-            System.out.println(Partie.nbMinesRestantes);
-            for(int i=0;i<=largeur;i++){
-                for(int j=0;j<=hauteur;j++) {
-                    x=lectureClavier.nextInt();
-                    y= lectureClavier.nextInt();
-                    Point p=new Point(x,y);
-                    p.getX();
-                    p.getY();
-                }
-                System.out.println("\n");
+    // public void marquerCase(Point pt){
+    //     if(Case.getEtatCourant()=EtatCouverte.marquer(this)){
+    //         Partie.decrNbMines();
+    //         Case.setEtatCourant(marquer);
+    //     }
+    //     if(Case.getEtatCourant()=EtatMarquee.marquer(this)){
+    //         Partie.incrNbMines();
+    //         Case.setEtatCourant(couverte);
+    //     }
+    // }
+    // public void decouvrirCase(Point pt){
+    //     if(Case.getEtatCourant()=EtatCouverte.decouvrir(this)){
+    //         Partie.decrNbMines();
+    //         Case.setEtatCourant(decouverte);
+    //         Case.devoiler();
+    //     }
+    // }
+    public void afficher(Map<Point,Case> Plat){
+        for (int i = 0; i < hauteur; i++) {
+            for (int j = 0; j < largeur; j++) {
+                Plat.get(new Point(j, i)).afficher();
             }
-            System.out.println("1- Marquer une case");
-            System.out.println("2- Decouvrir une case");
-            System.out.println("0- Quitter");
-            if(c==1) {
-                System.out.println("Saisissez les coordonnees de la case");
-                x=lectureClavier.nextInt();
-                y= lectureClavier.nextInt();
-                Point p= new Point(x,y);
-                marquerCase(p);
-            }
-            if(c==2) {
-                System.out.println("Saisissez les coordonnees de la case");
-                //CaseNumerotee.afficher();
-                x=lectureClavier.nextInt();
-                y= lectureClavier.nextInt();
-                Point p=new Point(x,y);
-                decouvrirCase(p);
-            }
+            
         }
     }
 }
+    
