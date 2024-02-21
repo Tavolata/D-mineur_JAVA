@@ -63,7 +63,7 @@ public abstract class Case {
 
     }
     public void afficher(){
-        System.out.println(getEtatCourant());
+        System.out.print(getEtatCourant());
 
     }
 
@@ -78,6 +78,10 @@ public abstract class Case {
 
     public void ajouterVoisine(Case c){
         m_voisines.add(c);
+    }
+
+    public void incNbVoisinesMinees() {
+        throw new UnsupportedOperationException("Unimplemented method 'incNbVoisinesMinees'");
     }
 
 

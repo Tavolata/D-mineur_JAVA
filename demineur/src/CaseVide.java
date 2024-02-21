@@ -1,6 +1,6 @@
 import java.awt.*;
 import java.util.ArrayList;
-
+@SuppressWarnings("unused")
 public class CaseVide extends Case {
 
     public CaseVide()
@@ -25,6 +25,6 @@ public class CaseVide extends Case {
         }
     }
     public void afficher(){
-        System.out.println(" ");
+        System.out.print("*");
     }
 }
