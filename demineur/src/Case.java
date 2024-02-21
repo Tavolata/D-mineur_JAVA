@@ -8,7 +8,7 @@ import Exceptions.ExceptionCaseMarquee;
 public class Case {
     private EtatCase desEtatCase;
     protected Point Coordonnees = new Point();
-    ArrayList<Case> m_voisines;
+    protected ArrayList<Case> m_voisines;
 
 
 
