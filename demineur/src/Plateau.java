@@ -1,3 +1,6 @@
+import Exceptions.ExceptionCaseCouverte;
+import Exceptions.ExceptionCaseMarquee;
+
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -102,23 +105,14 @@ public class Plateau{
             return(false);
         }
     }
-    // public void marquerCase(Point pt){
-    //     if(Case.getEtatCourant()=EtatCouverte.marquer(this)){
-    //         Partie.decrNbMines();
-    //         Case.setEtatCourant(marquer);
-    //     }
-    //     if(Case.getEtatCourant()=EtatMarquee.marquer(this)){
-    //         Partie.incrNbMines();
-    //         Case.setEtatCourant(couverte);
-    //     }
-    // }
-    // public void decouvrirCase(Point pt){
-    //     if(Case.getEtatCourant()=EtatCouverte.decouvrir(this)){
-    //         Partie.decrNbMines();
-    //         Case.setEtatCourant(decouverte);
-    //         Case.devoiler();
-    //     }
-    // }
+    public void marquerCase(Point pt) throws ExceptionCaseCouverte, ExceptionCaseMarquee {
+         Case c=Plat.get(pt);
+         EtatCase.marquer(c);
+    }
+    public void decouvrirCase(Point pt) throws ExceptionCaseCouverte {
+         Case c=Plat.get(pt);
+         EtatCase.decouvrir(c);
+    }
     public void afficher(){
         for (int i = 0; i < hauteur; i++) {
             for (int j = 0; j < largeur; j++) {

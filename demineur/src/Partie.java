@@ -10,8 +10,6 @@ public class Partie {
     protected static boolean encours;
     protected static boolean resultat;
 
-    private Partie() {
-    }
     private Partie(String niveau){
         this.niveau= niveau;
     }

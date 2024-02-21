@@ -44,7 +44,17 @@ public abstract class Case {
 
     }
 
-    public void devoiler(){}
+    public void devoiler(){
+        if(Plat.get()){
+            CaseMinee.devoiler();
+        }
+        if(Case==numerotee){
+            CaseNumerotee.devoiler();
+        }
+        else{
+            CaseVide.devoiler();
+        }
+    }
 
     public void setEtatCourant(EtatCase e){
         switch(e.getClass().getSimpleName()){
