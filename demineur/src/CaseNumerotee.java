@@ -1,5 +1,13 @@
+import java.awt.*;
+
 public class CaseNumerotee extends Case {
     private int NbVoisinesMinees=0;
+    public CaseNumerotee(){
+        super();
+    }
+    public CaseNumerotee(Point pt){
+        super(pt);
+    }
     public void devoiler(){
         if(Partie.resultat=true){
             Partie.testerSiGagne();
