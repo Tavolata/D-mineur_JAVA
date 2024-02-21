@@ -1,17 +1,22 @@
+import Exceptions.ExceptionCaseCouverte;
+import Exceptions.ExceptionCaseMarquee;
+
 import java.awt.Point;
 import java.util.Scanner;
 
 public class Partie {
-    private static Plateau unPlateau;
+    protected Plateau unPlateau;
     protected static Partie uniqueInstance;
     protected int nbMinesInitial=10;
-    protected static int nbMinesRestantes;
+    protected int nbMinesRestantes;
     protected String niveau="Débutant";
-    protected static boolean encours;
-    protected static boolean resultat;
+    protected boolean encours;
+    protected boolean resultat;
 
-    private Partie(String niveau){
+    private Partie(String niveau)
+    {
         this.niveau= niveau;
+        unPlateau = new Plateau(9,9,10);
     }
 
     public static Partie setInstance(String niveau){
@@ -20,7 +25,7 @@ public class Partie {
         }
         return uniqueInstance;
     }
-    public static Partie getInstance(String débutant){
+    public static Partie getInstance(){
         return uniqueInstance;
     }
 
@@ -42,28 +47,28 @@ public class Partie {
     public boolean isEncours() {
         return encours;
     }
-    public void marquerCase(Point pt){
+    public void marquerCase(Point pt) throws ExceptionCaseCouverte, ExceptionCaseMarquee {
         unPlateau.marquerCase(pt);
     }
-    public void decouvrirCase(Point pt){
+    public void decouvrirCase(Point pt) throws ExceptionCaseCouverte {
         unPlateau.decouvrirCase(pt);
     }
-    public static void decrNbMines(){
+    public void decrNbMines(){
         nbMinesRestantes=nbMinesRestantes-1;
     }
-    public static void incrNbMines(){
+    public void incrNbMines(){
         nbMinesRestantes=nbMinesRestantes+1;
     }
-    public static void perdre(){
+    public void perdre(){
         if(nbMinesRestantes!=0){
             resultat=false;
             encours=false;
         }
     }
-    public static void testerSiGagne(){
+    public void testerSiGagne(){
         resultat=unPlateau.testerSiGagne();
     }
-    public void afficher(){
+    public void afficher()  throws ExceptionCaseCouverte, ExceptionCaseMarquee {
         Scanner lectureClavier= new Scanner(System.in);
         int c;
         int x;

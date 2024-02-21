@@ -9,16 +9,20 @@ public class CaseNumerotee extends Case {
 
 
     public void devoiler(){
-        if(Partie.resultat=true){
-            Partie.testerSiGagne();
-        }
-        else{
-            for(int i=0; i<=NbVoisinesMinees;i++){
-                m_voisines.get(i).decouvrir();
-            }
-        }
+        Partie.getInstance().testerSiGagne();
     }
-    public void afficher(){
+    public void afficher()
+    {
+/*        if (getEtatCourant() instanceof EtatCouverte) {
+            System.out.print("*");
+        }
+        else if (this.getEtatCourant() instanceof EtatDecouverte) {
+            System.out.print(NbVoisinesMinees);
+        }
+        else if (this.getEtatCourant() instanceof EtatMarquee) {
+            System.out.print("D");
+        }
+ */
         System.out.print(NbVoisinesMinees);
     }
     public void incNbVoisinesMinees(){

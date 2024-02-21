@@ -97,8 +97,8 @@ public class Plateau{
     }
     
 
-    public static boolean testerSiGagne(){
-        if(Partie.nbMinesRestantes==0){
+    public boolean testerSiGagne(){
+        if(Partie.uniqueInstance.getNbMinesRestantes()==0){
             return(true);
         }
         else{
@@ -107,11 +107,11 @@ public class Plateau{
     }
     public void marquerCase(Point pt) throws ExceptionCaseCouverte, ExceptionCaseMarquee {
          Case c=Plat.get(pt);
-         EtatCase.marquer(c);
+         c.marquer();
     }
     public void decouvrirCase(Point pt) throws ExceptionCaseCouverte {
          Case c=Plat.get(pt);
-         EtatCase.decouvrir(c);
+         c.decouvrir();
     }
     public void afficher(){
         for (int i = 0; i < hauteur; i++) {

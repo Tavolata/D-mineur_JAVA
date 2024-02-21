@@ -7,7 +7,7 @@ public class CaseMinee extends Case {
         super(pt);
     }
     public void devoiler(){
-        Partie.perdre();
+        Partie.getInstance().perdre();
     }
     public void afficher()
     {
