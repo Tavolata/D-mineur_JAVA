@@ -57,8 +57,7 @@ public class Case {
 
     }
     public void afficher(){
-        System.out.println("Coordonnees : "+this.Coordonnees.getX()+" "+this.Coordonnees.getY());
-        System.out.println("Etat : "+getEtatCourant());
+        System.out.println(getEtatCourant());
 
     }
 
