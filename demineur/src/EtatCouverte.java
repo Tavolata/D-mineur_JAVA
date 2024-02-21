@@ -1,8 +1,8 @@
 public class EtatCouverte extends EtatCase {
-    public static void decouvrir(Case c){
+    public void decouvrir(Case c){
         c.setEtatCourant(new EtatDecouverte());
     }
-    public static void marquer(Case c){
+    public void marquer(Case c){
         c.setEtatCourant(new EtatMarquee()); 
     }
 }

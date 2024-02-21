@@ -38,9 +38,9 @@ public class Case {
 
     }
 
-    public static void devoiler(){}
+    public void devoiler(){}
 
-    public static void setEtatCourant(EtatCase e){
+    public void setEtatCourant(EtatCase e){
         switch(e.getClass().getSimpleName()){
             case "EtatCouverte":
                 this.desEtatCase = new EtatCouverte();
