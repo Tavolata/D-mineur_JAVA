@@ -1,4 +1,5 @@
 import java.awt.Point;
+import java.util.Scanner;
 
 public class Partie {
     private static Plateau unPlateau;
@@ -66,6 +67,49 @@ public class Partie {
         resultat=unPlateau.testerSiGagne();
     }
     public void afficher(){
+        Scanner lectureClavier= new Scanner(System.in);
+        int c;
+        int x;
+        int y;
+        System.out.println("Nb mines restantes:");
+        System.out.println(nbMinesRestantes);
         unPlateau.afficher();
+        System.out.println("1- Marquer une case");
+        System.out.println("2- Decouvrir une case");
+        System.out.println("0- Quitter");
+        c=lectureClavier.nextInt();
+        System.out.println("Saisissez les coordonnees de la case");
+        x=lectureClavier.nextInt();
+        y= lectureClavier.nextInt();
+        Point p= new Point(x,y);
+        switch(c){
+            case 1: marquerCase(p);
+                System.out.println("Nb mines restantes:");
+                System.out.println(nbMinesRestantes);
+                unPlateau.afficher();
+                System.out.println("1- Marquer une case");
+                System.out.println("2- Decouvrir une case");
+                System.out.println("0- Quitter");
+                c=lectureClavier.nextInt();
+                System.out.println("Saisissez les coordonnees de la case");
+                x=lectureClavier.nextInt();
+                y= lectureClavier.nextInt();
+                p= new Point(x,y);
+                break;
+            case 2:
+                decouvrirCase(p);
+                System.out.println("Nb mines restantes:");
+                System.out.println(nbMinesRestantes);
+                unPlateau.afficher();
+                System.out.println("1- Marquer une case");
+                System.out.println("2- Decouvrir une case");
+                System.out.println("0- Quitter");
+                c=lectureClavier.nextInt();
+                System.out.println("Saisissez les coordonnees de la case");
+                x=lectureClavier.nextInt();
+                y= lectureClavier.nextInt();
+                p= new Point(x,y);
+                break;
+        }while(c!=0);
     }
 }
