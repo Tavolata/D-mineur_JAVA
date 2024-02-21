@@ -23,6 +23,15 @@ public class CaseVide extends Case {
         }
     }
     public void afficher(){
-        System.out.print("*");
+        //System.out.print("*");
+        if (getEtatCourant() instanceof EtatCouverte) {
+            System.out.print("*");
+        }
+        else if (this.getEtatCourant() instanceof EtatDecouverte) {
+            System.out.print(" ");
+        }
+        else if (this.getEtatCourant() instanceof EtatMarquee) {
+            System.out.print("D");
+        }
     }
 }

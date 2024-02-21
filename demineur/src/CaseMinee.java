@@ -11,6 +11,15 @@ public class CaseMinee extends Case {
     }
     public void afficher()
     {
-        System.out.print("M");
+        //System.out.print("M");
+        if (getEtatCourant() instanceof EtatCouverte) {
+            System.out.print("*");
+        }
+        else if (this.getEtatCourant() instanceof EtatDecouverte) {
+            System.out.print("M");
+        }
+        else if (this.getEtatCourant() instanceof EtatMarquee) {
+            System.out.print("D");
+        }
     }
 }

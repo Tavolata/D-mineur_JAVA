@@ -13,7 +13,7 @@ public class CaseNumerotee extends Case {
     }
     public void afficher()
     {
-/*        if (getEtatCourant() instanceof EtatCouverte) {
+        if (getEtatCourant() instanceof EtatCouverte) {
             System.out.print("*");
         }
         else if (this.getEtatCourant() instanceof EtatDecouverte) {
@@ -22,8 +22,6 @@ public class CaseNumerotee extends Case {
         else if (this.getEtatCourant() instanceof EtatMarquee) {
             System.out.print("D");
         }
- */
-        System.out.print(NbVoisinesMinees);
     }
     public void incNbVoisinesMinees(){
         this.NbVoisinesMinees=NbVoisinesMinees+1;
