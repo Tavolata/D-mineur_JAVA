@@ -31,7 +31,8 @@ public class Main {
             niveau = "Expert";
         }
         partie=Partie.setInstance(niveau);
-        while(choix != -1)
+        partie.encours=true;
+        while(Partie.getInstance().encours==true)
         {
             partie.afficher();
         }

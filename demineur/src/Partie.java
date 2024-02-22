@@ -72,10 +72,8 @@ public class Partie {
         nbMinesRestantes=nbMinesRestantes+1;
     }
     public void perdre(){
-        if(nbMinesRestantes!=0){
-            resultat=false;
-            encours=false;
-        }
+        resultat=false;
+        encours=false;
     }
     public void testerSiGagne(){
         resultat=unPlateau.testerSiGagne();
@@ -83,8 +81,9 @@ public class Partie {
     public void afficher(){
         Scanner lectureClavier= new Scanner(System.in);
         int c;
-        int x;
-        int y;
+        int x=0;
+        int y=0;
+        Point p= new Point(x,y);
         System.out.println("Nb mines restantes:");
         System.out.println(nbMinesRestantes);
         unPlateau.afficher();
@@ -92,12 +91,12 @@ public class Partie {
         System.out.println("2- Decouvrir une case");
         System.out.println("0- Quitter");
         c=lectureClavier.nextInt();
-        System.out.println("Saisissez les coordonnees de la case");
-        x=lectureClavier.nextInt();
-        y= lectureClavier.nextInt();
-        Point p= new Point(x,y);
         switch(c){
-            case 1: marquerCase(p);
+            case 1: System.out.println("Saisissez les coordonnees de la case");
+                x=lectureClavier.nextInt();
+                y= lectureClavier.nextInt();
+                p= new Point(x,y);
+                marquerCase(p);
                 System.out.println("Nb mines restantes:");
                 System.out.println(nbMinesRestantes);
                 unPlateau.afficher();
@@ -105,13 +104,11 @@ public class Partie {
                 System.out.println("2- Decouvrir une case");
                 System.out.println("0- Quitter");
                 c=lectureClavier.nextInt();
-                System.out.println("Saisissez les coordonnees de la case");
+                break;
+            case 2: System.out.println("Saisissez les coordonnees de la case");
                 x=lectureClavier.nextInt();
                 y= lectureClavier.nextInt();
-                lectureClavier.close();
                 p= new Point(x,y);
-                break;
-            case 2:
                 decouvrirCase(p);
                 System.out.println("Nb mines restantes:");
                 System.out.println(nbMinesRestantes);
@@ -120,11 +117,6 @@ public class Partie {
                 System.out.println("2- Decouvrir une case");
                 System.out.println("0- Quitter");
                 c=lectureClavier.nextInt();
-                System.out.println("Saisissez les coordonnees de la case");
-                x=lectureClavier.nextInt();
-                y= lectureClavier.nextInt();
-                lectureClavier.close();
-                p= new Point(x,y);
                 break;
 
         }while(c!=0);

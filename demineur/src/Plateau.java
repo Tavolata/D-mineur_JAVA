@@ -93,7 +93,7 @@ public class Plateau{
     
 
     public boolean testerSiGagne(){
-        if(Partie.uniqueInstance.getNbMinesRestantes()==0){
+        if(Partie.uniqueInstance.getNbMinesRestantes()==0 && Plat.){
             return(true);
         }
         else{
