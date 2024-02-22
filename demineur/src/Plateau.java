@@ -117,6 +117,8 @@ public class Plateau{
 
     public boolean testerSiGagne(){
         int count=0;
+        int M_count=0;
+        boolean test=true;
         Point p=new Point();
         for(int i=0;i<hauteur;i++){
             for(int j=0;j<largeur;j++){
@@ -125,14 +127,18 @@ public class Plateau{
                 if(Plat.get(p).getEtatCourant() instanceof EtatDecouverte){
                     count++;
                 }
+                else if (Plat.get(p).getEtatCourant() instanceof EtatMarquee){
+                    if(Plat.get(p) instanceof CaseMinee){
+                        M_count++;
+                    }
+                }
             }
         }
-        if(Partie.uniqueInstance.getNbMinesRestantes()==0){
-            return(true);
+
+        if(Partie.uniqueInstance.nbMinesInitial==M_count && count==taille-Partie.uniqueInstance.getNbMinesInitial()){
+            test=false;
         }
-        else{
-            return(false);
-        }
+        return test;
     }
     public void marquerCase(Point pt) {
         Case c=Plat.get(pt);
