@@ -24,7 +24,7 @@ public class CaseVide extends Case {
     }
     public void afficher(){
         //System.out.print("*");
-        if (getEtatCourant() instanceof EtatCouverte) {
+        if (this.getEtatCourant() instanceof EtatCouverte) {
             System.out.print("*");
         }
         else if (this.getEtatCourant() instanceof EtatDecouverte) {

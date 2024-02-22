@@ -13,7 +13,7 @@ public class CaseNumerotee extends Case {
     }
     public void afficher()
     {
-        if (getEtatCourant() instanceof EtatCouverte) {
+        if (this.getEtatCourant() instanceof EtatCouverte) {
             System.out.print("*");
         }
         else if (this.getEtatCourant() instanceof EtatDecouverte) {
