@@ -1,5 +1,3 @@
-import Exceptions.ExceptionCaseCouverte;
-import Exceptions.ExceptionCaseMarquee;
 
 import java.awt.Point;
 import java.util.Scanner;
@@ -16,7 +14,21 @@ public class Partie {
     private Partie(String niveau)
     {
         this.niveau= niveau;
-        unPlateau = new Plateau(9,9,10);
+        if (niveau == "Débutant")
+        {
+            unPlateau = new Plateau(9, 9, 10);
+            nbMinesRestantes=10;
+        }
+        else if (niveau == "Intermédiaire")
+        {
+            unPlateau = new Plateau(16, 16, 40);
+            nbMinesRestantes=40;
+        }
+        else if (niveau == "Expert")
+        {
+            unPlateau = new Plateau(16, 30, 99);
+            nbMinesRestantes=99;
+        }
     }
 
     public static Partie setInstance(String niveau){
@@ -47,10 +59,10 @@ public class Partie {
     public boolean isEncours() {
         return encours;
     }
-    public void marquerCase(Point pt) throws ExceptionCaseCouverte, ExceptionCaseMarquee {
+    public void marquerCase(Point pt){
         unPlateau.marquerCase(pt);
     }
-    public void decouvrirCase(Point pt) throws ExceptionCaseCouverte {
+    public void decouvrirCase(Point pt){
         unPlateau.decouvrirCase(pt);
     }
     public void decrNbMines(){
@@ -68,7 +80,7 @@ public class Partie {
     public void testerSiGagne(){
         resultat=unPlateau.testerSiGagne();
     }
-    public void afficher()  throws ExceptionCaseCouverte, ExceptionCaseMarquee {
+    public void afficher(){
         Scanner lectureClavier= new Scanner(System.in);
         int c;
         int x;
@@ -96,6 +108,7 @@ public class Partie {
                 System.out.println("Saisissez les coordonnees de la case");
                 x=lectureClavier.nextInt();
                 y= lectureClavier.nextInt();
+                lectureClavier.close();
                 p= new Point(x,y);
                 break;
             case 2:
@@ -110,8 +123,10 @@ public class Partie {
                 System.out.println("Saisissez les coordonnees de la case");
                 x=lectureClavier.nextInt();
                 y= lectureClavier.nextInt();
+                lectureClavier.close();
                 p= new Point(x,y);
                 break;
+
         }while(c!=0);
     }
 }

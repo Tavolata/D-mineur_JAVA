@@ -31,7 +31,7 @@ public class CaseVide extends Case {
             System.out.print(" ");
         }
         else if (this.getEtatCourant() instanceof EtatMarquee) {
-            System.out.print("D");
+            System.out.print("M");
         }
     }
 }

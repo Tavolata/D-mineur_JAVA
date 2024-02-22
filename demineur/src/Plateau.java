@@ -1,12 +1,7 @@
-import Exceptions.ExceptionCaseCouverte;
-import Exceptions.ExceptionCaseMarquee;
 
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
-import java.io.*;
-import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 public class Plateau{
     private int largeur=9;
@@ -105,11 +100,11 @@ public class Plateau{
             return(false);
         }
     }
-    public void marquerCase(Point pt) throws ExceptionCaseCouverte, ExceptionCaseMarquee {
-         Case c=Plat.get(pt);
-         c.marquer();
+    public void marquerCase(Point pt) {
+        Case c=Plat.get(pt);
+        c.marquer();
     }
-    public void decouvrirCase(Point pt) throws ExceptionCaseCouverte {
+    public void decouvrirCase(Point pt) {
          Case c=Plat.get(pt);
          c.decouvrir();
     }

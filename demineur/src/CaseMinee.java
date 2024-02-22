@@ -16,10 +16,10 @@ public class CaseMinee extends Case {
             System.out.print("*");
         }
         else if (this.getEtatCourant() instanceof EtatDecouverte) {
-            System.out.print("M");
+            System.out.print("B");
         }
         else if (this.getEtatCourant() instanceof EtatMarquee) {
-            System.out.print("D");
+            System.out.print("M");
         }
     }
 }

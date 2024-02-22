@@ -1,9 +1,6 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-import Exceptions.ExceptionCaseCouverte;
-import Exceptions.ExceptionCaseMarquee;
-
 @SuppressWarnings("unused")
 public abstract class Case {
     private EtatCase desEtatCase;
@@ -13,9 +10,10 @@ public abstract class Case {
 
 
     public Case(){
+        this.desEtatCase = new EtatCouverte();
         this.Coordonnees.x=0;
         this.Coordonnees.y=0;
-        this.desEtatCase= new EtatCouverte();
+        this.setEtatCourant(desEtatCase);
 
     }
 
@@ -24,24 +22,14 @@ public abstract class Case {
         Coordonnees = pt;
     }
 
-    public void marquer(){
-        try {
-            desEtatCase.marquer(this);
-        } catch (ExceptionCaseCouverte e) { 
-            e.printStackTrace();
-        } catch (ExceptionCaseMarquee e) {
-            e.printStackTrace();
-        }
-        }
-    public void decouvrir(){
-        try {
-            desEtatCase.decouvrir(this);
-        } catch (ExceptionCaseCouverte e) {
-            
-            e.printStackTrace();
-        }
-        
-
+    public void marquer()
+    {
+    
+        desEtatCase.marquer(this);
+    }
+    public void decouvrir()
+    {
+        desEtatCase.decouvrir(this);
     }
 
     public abstract void devoiler();

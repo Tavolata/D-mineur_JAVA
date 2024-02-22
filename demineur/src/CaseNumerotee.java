@@ -20,7 +20,7 @@ public class CaseNumerotee extends Case {
             System.out.print(NbVoisinesMinees);
         }
         else if (this.getEtatCourant() instanceof EtatMarquee) {
-            System.out.print("D");
+            System.out.print("M");
         }
     }
     public void incNbVoisinesMinees(){
