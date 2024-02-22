@@ -17,7 +17,7 @@ public class CaseVide extends Case {
         Partie.getInstance().testerSiGagne();
         if (Partie.getInstance().isEncours())
         {
-            for(int i=0;i<=8;i++){
+            for(int i=0;i<8;i++){
                 m_voisines.get(i).decouvrir();
             }
         }

@@ -34,10 +34,11 @@ public class Main {
         partie.encours=true;
         while(Partie.getInstance().encours==true)
         {
-            partie.afficher();
+            choix = partie.afficher();
         }
 
         sc.close();
+
 
 
     

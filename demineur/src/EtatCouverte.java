@@ -7,3 +7,6 @@ public class EtatCouverte extends EtatCase {
         c.setEtatCourant(new EtatMarquee()); 
     }
 }
+
+
+

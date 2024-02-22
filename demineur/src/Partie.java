@@ -10,6 +10,7 @@ public class Partie {
     protected String niveau="Débutant";
     protected boolean encours;
     protected boolean resultat;
+    protected Scanner lectureClavier= new Scanner(System.in);
 
     private Partie(String niveau)
     {
@@ -78,12 +79,17 @@ public class Partie {
     public void testerSiGagne(){
         resultat=unPlateau.testerSiGagne();
     }
-    public void afficher(){
-        Scanner lectureClavier= new Scanner(System.in);
+    public int afficher(){
         int c;
+<<<<<<< Updated upstream
         int x=0;
         int y=0;
         Point p= new Point(x,y);
+=======
+        int x;
+        int y;
+        Point p;
+>>>>>>> Stashed changes
         System.out.println("Nb mines restantes:");
         System.out.println(nbMinesRestantes);
         unPlateau.afficher();
@@ -92,6 +98,7 @@ public class Partie {
         System.out.println("0- Quitter");
         c=lectureClavier.nextInt();
         switch(c){
+<<<<<<< Updated upstream
             case 1: System.out.println("Saisissez les coordonnees de la case");
                 x=lectureClavier.nextInt();
                 y= lectureClavier.nextInt();
@@ -117,8 +124,26 @@ public class Partie {
                 System.out.println("2- Decouvrir une case");
                 System.out.println("0- Quitter");
                 c=lectureClavier.nextInt();
+=======
+            case 1:
+            
+                System.out.println("Saisissez les coordonnees de la case");
+                x=lectureClavier.nextInt();
+                y= lectureClavier.nextInt();
+                p = new Point(x,y);
+                marquerCase(p);
+                break;
+            case 2:
+                System.out.println("Saisissez les coordonnees de la case");
+                x=lectureClavier.nextInt();
+                y= lectureClavier.nextInt();
+                p= new Point(x,y);
+                decouvrirCase(p);
+>>>>>>> Stashed changes
                 break;
 
-        }while(c!=0);
+        }
+
+        return c;
     }
 }

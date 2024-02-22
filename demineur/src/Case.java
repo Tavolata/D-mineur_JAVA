@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public abstract class Case {
     private EtatCase desEtatCase;
     protected Point Coordonnees = new Point();
-    protected ArrayList<Case> m_voisines;
+    protected ArrayList<Case> m_voisines = new ArrayList<Case>();
 
 
 
@@ -13,13 +13,12 @@ public abstract class Case {
         this.desEtatCase = new EtatCouverte();
         this.Coordonnees.x=0;
         this.Coordonnees.y=0;
-        this.setEtatCourant(desEtatCase);
-
     }
 
     public Case(Point pt)
     {
         Coordonnees = pt;
+        this.desEtatCase = new EtatCouverte();
     }
 
     public void marquer()
@@ -45,10 +44,7 @@ public abstract class Case {
             case "EtatMarquee":
                 this.desEtatCase = new EtatMarquee();
                 break;
-
         }
-        
-
     }
     public abstract void afficher();
 
