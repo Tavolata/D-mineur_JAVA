@@ -15,7 +15,7 @@ public class CaseNumerotee extends Case {
     public void afficher()
     {
         if (getEtatCourant() instanceof EtatCouverte) {
-            System.out.print("N");
+            System.out.print("*");
         }
         else if (this.getEtatCourant() instanceof EtatDecouverte) {
             System.out.print(NbVoisinesMinees);

@@ -97,7 +97,7 @@ public class Partie {
         unPlateau.afficher();
         System.out.println("1- Marquer une case");
         System.out.println("2- Decouvrir une case");
-        System.out.println("0- Quitter");
+        System.out.println("-1 Quitter");
         c=lectureClavier.nextInt();
         switch(c){
             case 1:

@@ -134,7 +134,7 @@ public class Plateau{
                 }
             }
         }
-        if(Partie.uniqueInstance.nbMinesInitial==M_count && count==taille-Partie.uniqueInstance.getNbMinesInitial()){
+        if(Partie.uniqueInstance.encours == false && count==taille-Partie.uniqueInstance.getNbMinesInitial()){
             test=false;
         }
         return test;
