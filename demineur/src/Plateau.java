@@ -94,7 +94,15 @@ public class Plateau{
     
 
     public boolean testerSiGagne(){
-        if(Partie.uniqueInstance.getNbMinesRestantes()==0){
+        int count=0;
+        for(int i=0;i<=hauteur;i++){
+            for(int j=0;j<=largeur;j++){
+                if(Plat.get(new Point(i,j)).getEtatCourant() instanceof EtatDecouverte){
+                    count=count+1;
+                }
+            }
+        }
+        if(Partie.uniqueInstance.getNbMinesRestantes()==0 && count==taille-Partie.uniqueInstance.getNbMinesInitial()){
             return(true);
         }
         else{
