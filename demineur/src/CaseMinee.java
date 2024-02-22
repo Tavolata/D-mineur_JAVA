@@ -9,6 +9,7 @@ public class CaseMinee extends Case {
     public void devoiler(){
         Partie.getInstance().perdre();
     }
+    
     public void afficher()
     {
         //System.out.print("M");

@@ -39,7 +39,7 @@ public class Main {
 
         sc.close();
 
-
+        //Pour changer affichage il faut juste aller dans CaseMinee et changer conditions, idem pour CaseMarquee
 
     
     }

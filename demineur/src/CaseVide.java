@@ -17,8 +17,12 @@ public class CaseVide extends Case {
         Partie.getInstance().testerSiGagne();
         if (Partie.getInstance().isEncours())
         {
-            for(int i=0;i<8;i++){
-                m_voisines.get(i).decouvrir();
+            for (Case c  : m_voisines)
+            {
+                if (c.getEtatCourant() instanceof EtatCouverte)
+                {
+                    c.decouvrir();
+                }
             }
         }
     }

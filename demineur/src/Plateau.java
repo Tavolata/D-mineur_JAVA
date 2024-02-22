@@ -70,7 +70,29 @@ public class Plateau{
             }
         
         }
+
+        for (int i = 0; i < largeur; i++)
+        {
+            for (int j = 0; j < hauteur; j++)
+            {
+                if (Plat.get(new Point(i, j)) instanceof CaseVide)
+                {
+                    for (int a = i-1; a <= i+1; a++ )
+                    {
+                        for (int b = j-1; b<= j+1; b++)
+                        {
+                            if((a>=0) && (a<hauteur) && (b>=0) && (b<largeur) && ((a!=i) || (b!=j)))  
+                            {
+                                Plat.get(new Point(i, j)).getVoisines().add(Plat.get(new Point(a, b)));
+                            }
+                        }
+                    }
+                    
+                }
+            }
         
+        }
+
     }
     public int getTaille(){
         return taille;
@@ -105,8 +127,10 @@ public class Plateau{
         Case c=Plat.get(pt);
         c.marquer();
     }
-    public void decouvrirCase(Point pt) {
+    public void decouvrirCase(Point pt)
+    {
          Case c=Plat.get(pt);
+         //si on découvre une case vide, on découvre toutes les cases voisines vides
          c.decouvrir();
     }
     public void afficher(){
