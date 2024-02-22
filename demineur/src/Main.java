@@ -41,7 +41,7 @@ public class Main {
 
         {
             choix = partie.afficher();
-            Partie.getInstance().encours=Partie.uniqueInstance.unPlateau.testerSiGagne();
+            
         }
         if(Partie.getInstance().isResultat())
         {
