@@ -37,7 +37,7 @@ public class Main {
         }
         partie=Partie.setInstance(niveau);
         partie.encours=true;
-        while(Partie.getInstance().encours==true)
+        while(Partie.getInstance().isEncours()==true)
         {
             choix = partie.afficher();
         }
