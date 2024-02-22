@@ -82,7 +82,10 @@ public class Partie {
         encours=false;
     }
     public void testerSiGagne(){
-        resultat=unPlateau.testerSiGagne();
+        encours=unPlateau.testerSiGagne();
+        if(encours==false){
+            resultat=true;
+        }
     }
     public int afficher(){
         int c;
