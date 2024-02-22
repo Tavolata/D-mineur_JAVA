@@ -70,6 +70,7 @@ public class Plateau{
             }
         
         }
+        
     }
     public int getTaille(){
         return taille;

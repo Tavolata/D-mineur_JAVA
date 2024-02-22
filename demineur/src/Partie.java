@@ -81,15 +81,9 @@ public class Partie {
     }
     public int afficher(){
         int c;
-<<<<<<< Updated upstream
-        int x=0;
-        int y=0;
-        Point p= new Point(x,y);
-=======
         int x;
         int y;
         Point p;
->>>>>>> Stashed changes
         System.out.println("Nb mines restantes:");
         System.out.println(nbMinesRestantes);
         unPlateau.afficher();
@@ -98,33 +92,6 @@ public class Partie {
         System.out.println("0- Quitter");
         c=lectureClavier.nextInt();
         switch(c){
-<<<<<<< Updated upstream
-            case 1: System.out.println("Saisissez les coordonnees de la case");
-                x=lectureClavier.nextInt();
-                y= lectureClavier.nextInt();
-                p= new Point(x,y);
-                marquerCase(p);
-                System.out.println("Nb mines restantes:");
-                System.out.println(nbMinesRestantes);
-                unPlateau.afficher();
-                System.out.println("1- Marquer une case");
-                System.out.println("2- Decouvrir une case");
-                System.out.println("0- Quitter");
-                c=lectureClavier.nextInt();
-                break;
-            case 2: System.out.println("Saisissez les coordonnees de la case");
-                x=lectureClavier.nextInt();
-                y= lectureClavier.nextInt();
-                p= new Point(x,y);
-                decouvrirCase(p);
-                System.out.println("Nb mines restantes:");
-                System.out.println(nbMinesRestantes);
-                unPlateau.afficher();
-                System.out.println("1- Marquer une case");
-                System.out.println("2- Decouvrir une case");
-                System.out.println("0- Quitter");
-                c=lectureClavier.nextInt();
-=======
             case 1:
             
                 System.out.println("Saisissez les coordonnees de la case");
@@ -139,7 +106,6 @@ public class Partie {
                 y= lectureClavier.nextInt();
                 p= new Point(x,y);
                 decouvrirCase(p);
->>>>>>> Stashed changes
                 break;
 
         }
