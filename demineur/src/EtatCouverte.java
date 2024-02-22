@@ -4,7 +4,8 @@ public class EtatCouverte extends EtatCase {
         c.devoiler();
     }
     public void marquer(Case c){
-        c.setEtatCourant(new EtatMarquee()); 
+        c.setEtatCourant(new EtatMarquee());
+        Partie.uniqueInstance.decrNbMines();
     }
 }
 

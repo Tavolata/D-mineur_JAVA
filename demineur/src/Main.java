@@ -38,6 +38,7 @@ public class Main {
         partie=Partie.setInstance(niveau);
         partie.encours=true;
         while(Partie.getInstance().encours==true || choix == -1)
+
         {
             choix = partie.afficher();
             Partie.getInstance().encours=Partie.uniqueInstance.unPlateau.testerSiGagne();
