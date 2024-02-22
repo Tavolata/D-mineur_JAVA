@@ -30,6 +30,11 @@ public class Partie {
             unPlateau = new Plateau(16, 30, 99);
             nbMinesRestantes=99;
         }
+        else if (niveau =="debug")
+        {
+            unPlateau = new Plateau(3, 3,2 );
+            nbMinesRestantes=2;
+        }
     }
 
     public static Partie setInstance(String niveau){

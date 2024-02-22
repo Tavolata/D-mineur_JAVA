@@ -11,11 +11,11 @@ public class CaseNumerotee extends Case {
     public void devoiler(){
         Partie.getInstance().testerSiGagne();
     }
-    
+
     public void afficher()
     {
         if (getEtatCourant() instanceof EtatCouverte) {
-            System.out.print("*");
+            System.out.print("N");
         }
         else if (this.getEtatCourant() instanceof EtatDecouverte) {
             System.out.print(NbVoisinesMinees);

@@ -14,7 +14,7 @@ public class CaseMinee extends Case {
     {
         //System.out.print("M");
         if (this.getEtatCourant() instanceof EtatCouverte) {
-            System.out.print("*");
+            System.out.print("B");
         }
         else if (this.getEtatCourant() instanceof EtatDecouverte) {
             System.out.print("B");

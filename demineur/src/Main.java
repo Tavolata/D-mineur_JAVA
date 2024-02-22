@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Choisissez votre niveau de difficulté");
         System.out.println("1. Débutant | 2. Intermédiaire | 3. Expert");
         choix = sc.nextInt();
-        while(choix != 1 && choix != 2 && choix != 3)
+        while(choix != 1 && choix != 2 && choix != 3 && choix != 4)
         {
 
             System.out.println("Choix Invalide, veuillez choisir un niveau de difficulté valide");
@@ -31,11 +31,23 @@ public class Main {
         {
             niveau = "Expert";
         }
+        else if(choix == 4)
+        {
+            niveau = "debug";
+        }
         partie=Partie.setInstance(niveau);
         partie.encours=true;
         while(Partie.getInstance().encours==true)
         {
             choix = partie.afficher();
+        }
+        if(Partie.getInstance().isResultat())
+        {
+            System.out.println("Vous avez gagné !");
+        }
+        else
+        {
+            System.out.println("Vous avez perdu !");
         }
 
         sc.close();

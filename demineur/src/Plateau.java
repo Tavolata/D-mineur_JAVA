@@ -117,14 +117,17 @@ public class Plateau{
 
     public boolean testerSiGagne(){
         int count=0;
-        for(int i=0;i<=hauteur;i++){
-            for(int j=0;j<=largeur;j++){
-                if(Plat.get(new Point(i,j)).getEtatCourant() instanceof EtatDecouverte){
-                    count=count+1;
+        Point p=new Point();
+        for(int i=0;i<hauteur;i++){
+            for(int j=0;j<largeur;j++){
+                p.x=i;
+                p.y=j;
+                if(Plat.get(p).getEtatCourant() instanceof EtatDecouverte){
+                    count++;
                 }
             }
         }
-        if(Partie.uniqueInstance.getNbMinesRestantes()==0 && count==taille-Partie.uniqueInstance.getNbMinesInitial()){
+        if(/*Partie.uniqueInstance.getNbMinesRestantes()==0 && */count==taille-Partie.uniqueInstance.getNbMinesInitial()){
             return(true);
         }
         else{
